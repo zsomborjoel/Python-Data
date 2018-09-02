@@ -26,7 +26,7 @@ sourceCur.execute("""SELECT
         PP.WeightUnitMeasureCode,
         PP.StandardCost,
         PP.ListPrice,
-        CONVERT(money, (PP.ListPrice * 0.2)) AS DealerPrice,
+        CONVERT(money, (PP.ListPrice - (PP.ListPrice * 0.2))) AS DealerPrice,
         PP.DaysToManufacture,
         PP.ReorderPoint,
         PP.SafetyStockLevel,
